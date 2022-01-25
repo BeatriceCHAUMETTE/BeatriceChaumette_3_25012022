@@ -14,11 +14,23 @@
 </head>
 <body>
     <!--Entête de page-->
-    <header id="header">
-        <img id="header_logo" src="./images/logo/ohmyfood.png" alt="logo Ohmyfood"/>
+    <header class="header">
+        <img class="header_logo" src="./images/logo/ohmyfood.png" alt="logo Ohmyfood"/>
     </header>
+    <!--Corps de page-->        
     <main>
-        
+        <!--Section 1 : localisation et recherche-->
+        <section id="search">
+            <form class="search_location" method="post">
+                <label for="search_location_form"><i class="fas fa-map-marker-alt"></i></label>
+                <input type="search" name="search_location_form" id="search_location_form" value="Paris, Belleville">
+            </form>
+            <div class="search_location_explore">
+                <h1>Réservez le menu qui vous convient</h1>
+                <p>Découvrez des restaurants d'exception, selectionnés par nos soins.</p>
+                <a href="#" class="button">Explorez nos restaurants</a>
+            </div>
+        </section>
     </main>
 </body>
 </html>
