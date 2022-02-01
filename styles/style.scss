@@ -1,0 +1,93 @@
+$font-text:'Roboto', sans-serif;
+$font-title: 'Shrikhand', sans-serif; 
+$primary-color: #9356dc;
+$secondary-color: #ff79da;
+$tertiary-color: #99e2d0;
+$background-color: #f2f2f2;
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-text; 
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/*Entête de page*/
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 50%;
+        padding: 20px 0;
+    }
+   
+    i {
+        position: absolute;
+        left: 5%;
+        top: 50%;
+        transform: translate( -5%, -50%);
+        font-size: 5vw;
+        color:black;
+    }
+}
+
+/*Corps de page*/
+
+/*Section 3 : restaurants*/
+
+figure {
+    img {
+        width: 100%; 
+    }  
+}
+
+/*Pied de page*/
+
+footer {
+    background-color: #333333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    
+    p {
+        font-family: $font-title;
+        color: white;
+        font-size: 20px;
+    }
+
+    nav {
+        font-size: 16px;
+        color: white;
+
+        ul {
+            line-height: 30px; 
+
+            li a {
+                color:white;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+
