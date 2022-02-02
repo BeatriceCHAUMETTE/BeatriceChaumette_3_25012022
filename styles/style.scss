@@ -40,7 +40,7 @@ header {
         position: absolute;
         left: 5%;
         top: 50%;
-        transform: translate( -5%, -50%);
+        transform: translate( -5%, -50% );
         font-size: 5vw;
         color:black;
     }
@@ -50,10 +50,33 @@ header {
 
 /*Section 3 : restaurants*/
 
-figure {
-    img {
-        width: 100%; 
-    }  
+#restaurants {
+    background-color: $background-color;
+    padding: 20px;
+    div {
+        figure {
+            width: 100%;
+            min-width: 280px;
+            max-width: 800px;
+            height: 200px;
+            margin: 20px auto 0;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+
+            @media screen and (min-width: 768px){
+                height: 250px;
+            }
+
+            img {
+                width: 100%;
+                height: 70%;
+                object-fit: cover;
+                border-radius: 20px 20px 0px 0px; 
+            }   
+        }    
+    }
+
 }
 
 /*Pied de page*/
@@ -74,7 +97,6 @@ footer {
 
     nav {
         font-size: 16px;
-        color: white;
 
         ul {
             line-height: 30px; 
