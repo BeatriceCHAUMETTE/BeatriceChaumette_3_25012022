@@ -11,6 +11,7 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 li {
@@ -39,21 +40,21 @@ li {
 
 /*Corps de page*/
 /*Section 3 : restaurants*/
-#restaurants {
+.restaurants {
   background-color: #f2f2f2;
   padding: 20px;
 }
-#restaurants div {
+.restaurants__container {
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 }
-#restaurants div a {
+.restaurants__link {
   flex: 1 1 45%;
 }
-#restaurants div figure {
+.restaurants__card {
   width: 100%;
   min-width: 280px;
   height: 200px;
@@ -61,7 +62,7 @@ li {
   border-radius: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 }
-#restaurants div figure img {
+.restaurants__img {
   width: 100%;
   height: 70%;
   object-fit: cover;
@@ -77,26 +78,24 @@ li {
   justify-content: space-between;
   gap: 20px;
 }
-@media screen and (min-width: 768px) {
-  .footer {
-    flex-direction: row;
-  }
-}
-
-.footer-brand {
+.footer__logo {
   font-family: "Shrikhand", sans-serif;
   color: white;
   font-size: 20px;
 }
-
-.footer-nav {
+.footer__nav {
   font-size: 16px;
 }
-.footer-nav__list {
+.footer__list {
   line-height: 30px;
 }
-.footer-nav__link {
+.footer__link {
   color: white;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
