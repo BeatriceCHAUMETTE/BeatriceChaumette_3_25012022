@@ -20,36 +20,38 @@
         <!--Corps de page-->        
         <main>
             <!--Section 1 : localisation et recherche-->
-            <section>
-                <form class="search_location" method="post">
-                    <label for="search_location_form"><i class="fas fa-map-marker-alt"></i></label>
-                    <input type="search" name="search_location_form" id="search_location_form" value="Paris, Belleville">
+            <section class="search">
+                <div class="location">
+                    <form class="location__form" method="post">
+                        <label for="search-location" class="location__label"><i class="fas fa-map-marker-alt"></i></label>
+                        <input type="search" name="search-location" id="search-location" class="location__input" value="Paris, Belleville">
                 </form>
-                <div>
-                    <h1>Réservez le menu qui vous convient</h1>
-                    <p>Découvrez des restaurants d'exception, selectionnés par nos soins.</p>
-                    <a href="#restaurants" class="btn">Explorez nos restaurants</a>
+                </div>
+                <div class="discover">
+                    <h1 class="discover__title">Réservez le menu qui vous convient</h1>
+                    <p class="discover__subtitle">Découvrez des restaurants d'exception, selectionnés par nos soins.</p>
+                    <a href="#restaurants" class="btn discover__btn">Explorez nos restaurants</a>
                 </div>
             </section>
             <!--Section 2 : fonctionnement et présentation-->
-            <section>
-                <h2>Fonctionnement</h2>
-                <nav>
-                    <ul>
-                        <li>
-                            <span>1</span>
-                            <i class="fa-solid fa-mobile-screen-button"></i>
-                            <span>Choisissez un restaurant</span>
+            <section class="functioning">
+                <h2 class="functioning__title">Fonctionnement</h2>
+                <nav class="functioning__nav">
+                    <ul class="functioning__list">
+                        <li class="functioning__item">
+                            <span class="functioning__number">1</span>
+                            <i class="functioning__icon fa-solid fa-mobile-screen-button"></i>
+                            <span class="functioning__txt">Choisissez un restaurant</span>
                         </li>
-                        <li>
-                            <span>2</span>
-                            <i class="fa-solid fa-list-ul"></i>
-                            <span>Composez votre menu</span>
+                        <li class="functioning__item">
+                            <span class="functioning__number">2</span>
+                            <i class="functioning__icon fa-solid fa-list-ul"></i>
+                            <span class="functioning__txt">Composez votre menu</span>
                         </li>
-                        <li>
-                            <span>3</span>
-                            <i class="fa-solid fa-store"></i>
-                            <span>Dégustez au restaurant</span>
+                        <li class="functioning__item">
+                            <span class="functioning__number">3</span>
+                            <i class="functioning__icon fa-solid fa-store"></i>
+                            <span class="functioning__txt">Dégustez au restaurant</span>
                         </li>
                     </ul>
                 </nav>
