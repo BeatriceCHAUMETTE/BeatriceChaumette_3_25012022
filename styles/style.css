@@ -7,6 +7,17 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 900;
 }
 
 a {
@@ -57,7 +68,7 @@ li {
 .restaurants__card {
   width: 100%;
   min-width: 280px;
-  height: 200px;
+  height: 280px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
@@ -67,6 +78,16 @@ li {
   height: 70%;
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
+}
+.restaurants__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  line-height: 25px;
+}
+.restaurants .fa-heart {
+  font-size: 24px;
 }
 
 /*Pied de page*/
