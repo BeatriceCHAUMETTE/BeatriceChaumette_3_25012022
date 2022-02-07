@@ -35,9 +35,10 @@ li {
 
 .btn {
   color: white;
-  padding: 20px;
-  background-color: #9356dc;
+  padding: 20px 40px;
+  background: linear-gradient(170deg, #ff79da, #9356dc);
   border-radius: 50px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
 }
 
 /*Entête de page*/
@@ -64,6 +65,7 @@ li {
 /*Corps de page*/
 /*Section 1 : localisation et recherche*/
 .search {
+  background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,12 +86,11 @@ li {
 }
 
 .discover {
-  background-color: #f2f2f2;
   width: 100%;
-  padding: 20px;
+  padding: 40px 0 80px 0;
 }
 .discover__title {
-  padding: 0 50px;
+  padding: 0 80px;
 }
 .discover__subtitle {
   color: #666666;
@@ -98,13 +99,59 @@ li {
 }
 
 /*Section 2 : fonctionnement et présentation*/
+.functioning {
+  padding: 50px 30px;
+}
+.functioning__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 30px 20px;
+}
+.functioning__item {
+  width: 100%;
+  min-width: 280px;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 10px 20px 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.functioning__item:hover {
+  background-color: #f2eafb;
+}
+.functioning__item:hover .functioning__icon {
+  color: #9356dc;
+}
+@media screen and (min-width: 992px) {
+  .functioning__item {
+    flex: 0 1 30%;
+  }
+}
+.functioning__number {
+  color: white;
+  background-color: #9356dc;
+  border-radius: 100%;
+  padding: 5px 10px;
+  margin-left: -15px;
+}
+.functioning__icon {
+  color: #666666;
+}
+
 /*Section 3 : restaurants*/
 .restaurants {
   background-color: #f2f2f2;
-  padding: 20px;
+  padding: 50px 30px;
 }
 .restaurants__container {
   width: 100%;
+  padding: 30px 0px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -114,12 +161,22 @@ li {
   flex: 1 1 45%;
 }
 .restaurants__card {
+  position: relative;
   width: 100%;
   min-width: 280px;
   height: 280px;
   background-color: white;
   border-radius: 20px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.restaurants__tag {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #278870;
+  font-weight: bold;
+  background-color: #99e2d0;
+  padding: 5px 10px;
 }
 .restaurants__img {
   width: 100%;
@@ -141,7 +198,7 @@ li {
 /*Pied de page*/
 .footer {
   background-color: #333333;
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
