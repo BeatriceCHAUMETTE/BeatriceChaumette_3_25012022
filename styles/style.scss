@@ -16,6 +16,10 @@ body {
     font-size: 18px; 
 }
 
+h1 {
+    font-size: 30px;
+}
+
 h2 {
     font-size: 26px;
     font-weight: 900;
@@ -35,6 +39,13 @@ li {
     list-style: none;
 }
 
+.btn {
+    color: white;
+    padding: 20px;
+    background-color: $primary-color;
+    border-radius: 50px;
+}
+
 /*Entête de page*/
 
 .header {
@@ -42,9 +53,10 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 
     &__logo {
-        width: 200px;
+        width: 220px;
         padding: 20px 0;
     }
    
@@ -59,6 +71,49 @@ li {
 }
 
 /*Corps de page*/
+
+/*Section 1 : localisation et recherche*/
+
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.location {
+    background-color: rgba(128, 128, 128, 0.2);
+    width: 100%;
+    padding: 20px 0;
+
+    &__input{
+        background-color: rgba(128, 128, 128, 0);
+        border: none;
+        text-align: center;
+        font-weight: bold;
+    }    
+}
+
+.discover {
+    background-color: $background-color;
+    width: 100%;
+    padding: 20px;
+
+    &__title {
+        padding: 0 50px;
+    }
+
+    &__subtitle {
+        color: #666666;
+        font-size: 22px;
+        margin-bottom: 60px;
+    }
+}
+
+/*Section 2 : fonctionnement et présentation*/
+
+
 
 /*Section 3 : restaurants*/
 
@@ -98,8 +153,8 @@ li {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px;
-        line-height: 25px;
+        padding: 10px;
+        line-height: 1.5em;
     }
 
     .fa-heart {
@@ -128,7 +183,7 @@ li {
     }
     
     &__list {
-        line-height: 30px;
+        line-height: 1.8em;
     }
     
     &__link {
