@@ -12,6 +12,7 @@ body {
 
 h1 {
   font-size: 30px;
+  font-weight: 900;
 }
 
 h2 {
@@ -35,7 +36,7 @@ li {
 
 .btn {
   color: white;
-  padding: 20px 40px;
+  padding: 20px 30px;
   background: linear-gradient(170deg, #ff79da, #9356dc);
   border-radius: 50px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
@@ -62,8 +63,8 @@ li {
   color: black;
 }
 
-/*Corps de page*/
-/*Section 1 : localisation et recherche*/
+/*Corps de page accueil*/
+/*Section 1 accueil : localisation et recherche*/
 .search {
   background-color: #f2f2f2;
   display: flex;
@@ -82,23 +83,23 @@ li {
   background-color: rgba(128, 128, 128, 0);
   border: none;
   text-align: center;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .discover {
   width: 100%;
-  padding: 40px 0 80px 0;
+  padding: 40px 20px 80px 20px;
 }
 .discover__title {
-  padding: 0 80px;
+  padding: 0 15px;
 }
 .discover__subtitle {
   color: #666666;
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 60px;
 }
 
-/*Section 2 : fonctionnement et présentation*/
+/*Section 2 accueil : fonctionnement et présentation*/
 .functioning {
   padding: 50px 30px;
 }
@@ -143,8 +144,11 @@ li {
 .functioning__icon {
   color: #666666;
 }
+.functioning__txt {
+  font-weight: 700;
+}
 
-/*Section 3 : restaurants*/
+/*Section 3 accueil : restaurants*/
 .restaurants {
   background-color: #f2f2f2;
   padding: 50px 30px;
@@ -222,6 +226,14 @@ li {
   .footer {
     flex-direction: row;
   }
+}
+
+/*Corps de page restaurant*/
+/*Section 1 page restaurant : bannière entête restaurant*/
+.banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
