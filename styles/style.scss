@@ -55,18 +55,36 @@ li {
 }
 
 .fa-heart {
-    opacity:0.7;
-        &:active { 
-            opacity: 1;   
-		/*transform-origin: bottom;
-        animation: like 250ms 100ms both;*/
-        transition: opacity 1500ms ease-in-out;
-        font-weight: bold;
-        background: linear-gradient($secondary-color, $primary-color);  
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        opacity: 1;
+        position: relative; 
+        cursor: pointer;
+        
+        &::after{
+            content: "\f004";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 4s ease-out;   
         }
+
+        &:active::after { 
+            font-weight: 900;
+            opacity: 1; 
+            background: linear-gradient(to bottom left, $secondary-color, $primary-color);  
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          
+        }
+
+        /*
+        &:active { 
+        transform-origin: bottom;
+        animation: like 250ms 100ms both;
+        }*/
     }
 
 /*@keyframes like {
