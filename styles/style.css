@@ -51,11 +51,6 @@ li {
   opacity: 1;
   position: relative;
   cursor: pointer;
-  /*
-  &:active { 
-  transform-origin: bottom;
-  animation: like 250ms 100ms both;
-  }*/
 }
 .fa-heart::after {
   content: "\f004";
@@ -76,16 +71,6 @@ li {
   -webkit-text-fill-color: transparent;
 }
 
-/*@keyframes like {
-
-    0% {
-        transform: scale(0);  
-    }
-
-    100% {
-    transform: scale(1);
-    }
-}*/
 /*Entête de page*/
 .header {
   position: relative;
@@ -312,6 +297,25 @@ li {
   width: 100%;
   min-width: 280px;
   padding-bottom: 20px;
+}
+.menu__dishes:nth-child(1) {
+  animation: slide-up 1500ms ease-in-out 100ms;
+}
+.menu__dishes:nth-child(2) {
+  animation: slide-up 2500ms ease-in-out 100ms;
+}
+.menu__dishes:nth-child(3) {
+  animation: slide-up 3500ms ease-in-out 100ms;
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 @media screen and (min-width: 1200px) {
   .menu__dishes {
