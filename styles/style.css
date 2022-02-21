@@ -10,6 +10,69 @@ body {
   font-size: 18px;
 }
 
+.loader {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loader 3s both;
+}
+.loader__spinner {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  border-top-color: #9356dc;
+  animation: spin 1.5s linear infinite;
+}
+.loader__spinner::before, .loader__spinner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 10px solid transparent;
+}
+.loader__spinner::before {
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  border-top-color: #99e2d0;
+  animation: spin 2s linear infinite;
+}
+.loader__spinner::after {
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  left: 30px;
+  border-top-color: #ff79da;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+    z-index: 10;
+  }
+  90% {
+    opacity: 1;
+    z-index: 10;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+
 h1 {
   font-size: 30px;
   font-weight: 900;
@@ -336,20 +399,62 @@ li {
 }
 .menu__dish {
   position: relative;
+  /*overflow: hidden;*/
   background-color: white;
   padding: 10px;
   margin: 20px -5px;
   border-radius: 20px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
   line-height: 1.7em;
+  cursor: pointer;
 }
 .menu__dish-title {
   font-size: 22px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu__dish-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.menu__dish-composition {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .menu__dish-price {
-  position: absolute;
-  right: 30px;
   font-weight: bold;
+}
+.menu__dish-price:active {
+  transform: translateX(-80px);
+  transition: transform 500ms ease-in-out;
+}
+.menu__dish-checkbox {
+  position: absolute;
+  left: 100%;
+  bottom: 0;
+  width: 80px;
+  height: 100%;
+  background-color: #99e2d0;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__dish-checkbox:active {
+  transform: translateX(-100%);
+  transition: transform 500ms ease-in-out;
+}
+.menu__dish-check {
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+}
+.menu__dish-check:active {
+  transform: rotate(360deg);
+  transition: transform 500ms ease-in-out;
 }
 .menu__btn {
   padding: 20px 50px;
