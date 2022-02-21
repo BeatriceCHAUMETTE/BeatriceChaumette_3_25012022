@@ -139,7 +139,7 @@ li {
         right: 0;
         left: 0;
         opacity: 0;
-        transition: opacity 4s ease-out;   
+        transition: opacity 1s ease-out;   
     }
 
     &:active::after { 
@@ -478,17 +478,26 @@ li {
 
         &:active .menu__dish-check {
             transform: rotate(360deg);
+        }  
+
+        &:active .menu__dish-title {
+            width: 50%;
         }
+
+        &:active .menu__dish-composition {
+            width: 50%;
+        }
+        
     } 
     
     &__dish-title {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+        transition: width 500ms ease-in-out; 
     }
 
     &__dish-caption {
-        width: 100%;
         display: flex;
         justify-content: space-between;
         gap: 10px;
@@ -499,6 +508,7 @@ li {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+        transition: width 500ms ease-in-out; 
     }
 
     &__dish-price {

@@ -123,7 +123,7 @@ li {
   right: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 4s ease-out;
+  transition: opacity 1s ease-out;
 }
 .fa-heart:active::after {
   font-weight: 900;
@@ -418,13 +418,19 @@ li {
 .menu__dish:active .menu__dish-check {
   transform: rotate(360deg);
 }
+.menu__dish:active .menu__dish-title {
+  width: 50%;
+}
+.menu__dish:active .menu__dish-composition {
+  width: 50%;
+}
 .menu__dish-title {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  transition: width 500ms ease-in-out;
 }
 .menu__dish-caption {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -434,6 +440,7 @@ li {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  transition: width 500ms ease-in-out;
 }
 .menu__dish-price {
   font-weight: bold;
