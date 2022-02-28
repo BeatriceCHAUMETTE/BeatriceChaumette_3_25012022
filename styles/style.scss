@@ -4,6 +4,22 @@ $primary-color: #9356dc;
 $secondary-color: #ff79da;
 $tertiary-color: #99e2d0;
 $background-color: #f2f2f2;
+$background-gradient: linear-gradient(170deg, $secondary-color, $primary-color);
+$transition-checkbox: transform 500ms ease-in-out;
+$transition-dish: width 500ms ease-in-out;
+
+@mixin flex-basis {
+    display: flex; 
+    justify-content: center;
+    align-items: center;    
+}
+
+@mixin border-spinner {
+    border-radius: 50%;
+    border: 10px solid transparent;   
+}
+
+/*Styles globaux*/
 
 *, ::before, ::after {
     box-sizing: border-box;
@@ -16,29 +32,95 @@ body {
     font-size: 18px;
 }
 
+h1 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+/*Boutons*/
+
+.btn {
+    color: white;
+    padding: 20px 30px;
+    background: $background-gradient;
+    border-radius: 50px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);;
+    transition: filter 450ms, box-shadow 300ms 150ms;
+
+    &:hover {
+        filter: brightness(115%);
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/*Coeurs*/
+
+.fa-heart {
+    opacity: 1;
+    position: relative; 
+    cursor: pointer;
+        
+    &::after{
+        content: "\f004";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-out;   
+    }
+
+    &:active::after { 
+        font-weight: 900;
+        opacity: 1; 
+        background: $background-gradient;  
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;         
+    }
+}
+
+/*Loader spinner*/
+
 .loader {
     background-color: white;
     position: fixed;
     width: 100%;
     height: 100vh;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
+    @include flex-basis;
     animation: loader 3s both;
 
     &__spinner {
        width: 200px;
        height: 200px;
-       border-radius: 50%;
-       border: 10px solid transparent;
+       @include border-spinner;
        border-top-color: $primary-color;
        animation: spin 1.5s linear infinite;
 
        &::before, &::after {
            content:"";
            position: absolute;
-           border-radius: 50%;
-           border: 10px solid transparent;
+           @include border-spinner;
        }
 
        &::before {
@@ -87,78 +169,11 @@ body {
     }
 }
 
-
-h1 {
-    font-size: 30px;
-    font-weight: 900;
-}
-
-h2 {
-    font-size: 26px;
-    font-weight: 900;
-}
-
-h3 {
-    font-size: 20px;
-    font-weight: 700;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-li {
-    list-style: none;
-}
-
-.btn {
-    color: white;
-    padding: 20px 30px;
-    background: linear-gradient(170deg, $secondary-color, $primary-color);
-    border-radius: 50px;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15);
-    transition: filter 450ms, box-shadow 300ms 150ms;
-
-    &:hover {
-        filter: brightness(115%);
-        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-    }
-}
-
-.fa-heart {
-    opacity: 1;
-    position: relative; 
-    cursor: pointer;
-        
-    &::after{
-        content: "\f004";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 1s ease-out;   
-    }
-
-    &:active::after { 
-        font-weight: 900;
-        opacity: 1; 
-        background: linear-gradient(to bottom left, $secondary-color, $primary-color);  
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;         
-    }
-}
-
 /*Entête de page*/
 
 .header {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-basis;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 
     &__logo {
@@ -184,10 +199,8 @@ li {
 
 .search {
     background-color: $background-color;
-    display: flex;
+    @include flex-basis;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
@@ -225,9 +238,7 @@ li {
     padding: 50px 30px;
 
     &__list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-basis;
         flex-wrap: wrap;
         gap: 25px;
         padding: 30px 20px;
@@ -238,7 +249,7 @@ li {
         min-width: 280px;
         background-color: $background-color;
         border-radius: 20px;
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);;
         padding: 20px 10px 20px 0px;
         display: flex;
         justify-content: flex-start;
@@ -252,6 +263,8 @@ li {
                 color: $primary-color;
             }
         }
+
+        /*Passage en ligne des étapes fonctionnement sur écrans à partir de 992px*/
 
         @media screen and (min-width: 992px) {
             flex: 0 1 30%;
@@ -333,39 +346,6 @@ li {
         font-size: 24px;
     }
 }    
-        
-/*Pied de page*/
-
-.footer {
-    background-color: #333333;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
-
-    &__logo {
-        font-family: $font-title;
-        color: white;
-        font-size: 20px;
-    }
-    
-    &__nav {
-        font-size: 16px;
-    }
-    
-    &__list {
-        line-height: 1.8em;
-    }
-    
-    &__link {
-        color:white;
-    }
-
-    @media screen and (min-width: 768px) {
-        flex-direction: row;
-    }
-}
 
 /*Corps de page restaurant*/
 
@@ -437,7 +417,9 @@ li {
             }
         }
 
-        @media screen and (min-width: 1200px) {
+        /*Passage sur 3 colonnes des plats sur écrans à partir de 1024px)*/
+
+        @media screen and (min-width: 1024px) {
             flex: 0 1 32%;
         }
     }
@@ -481,7 +463,7 @@ li {
         }  
 
         &:active .menu__dish-title {
-            width: 50%;
+            width: 70%;
         }
 
         &:active .menu__dish-composition {
@@ -494,7 +476,7 @@ li {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-        transition: width 500ms ease-in-out; 
+        transition: $transition-dish; 
     }
 
     &__dish-caption {
@@ -508,12 +490,12 @@ li {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-        transition: width 500ms ease-in-out; 
+        transition: $transition-dish; 
     }
 
     &__dish-price {
         font-weight: bold;      
-        transition: transform 500ms ease-in-out;
+        transition: $transition-checkbox;
     }
 
     &__dish-checkbox { 
@@ -524,17 +506,15 @@ li {
         height: 100%;
         background-color: $tertiary-color;
         border-radius: 0 20px 20px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 500ms ease-in-out;    
+        @include flex-basis;
+        transition: $transition-checkbox;    
     }
 
     &__dish-check {
         color: white;
         font-size: 30px;
         font-weight: 900;
-        transition: transform 500ms ease-in-out;
+        transition: $transition-checkbox;
     }
 
     &__btn {
@@ -543,6 +523,41 @@ li {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+    }
+}
+
+/*Pied de page global*/
+
+.footer {
+    background-color: #333333;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    &__logo {
+        font-family: $font-title;
+        color: white;
+        font-size: 20px;
+    }
+    
+    &__nav {
+        font-size: 16px;
+    }
+    
+    &__list {
+        line-height: 1.8em;
+    }
+    
+    &__link {
+        color:white;
+    }
+
+    /*Style footer sur tablette et desktop*/
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
     }
 }
 
