@@ -19,6 +19,12 @@ $transition-dish: width 500ms ease-in-out;
     border: 10px solid transparent;   
 }
 
+@mixin overflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;   
+}
+
 /*Styles globaux*/
 
 *, ::before, ::after {
@@ -473,9 +479,7 @@ li {
     } 
     
     &__dish-title {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
+        @include overflow;
         transition: $transition-dish; 
     }
 
@@ -487,9 +491,7 @@ li {
 
     &__dish-composition {
         font-size: 16px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
+        @include overflow;
         transition: $transition-dish; 
     }
 
