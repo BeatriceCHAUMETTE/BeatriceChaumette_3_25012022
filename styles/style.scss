@@ -556,6 +556,14 @@ li {
         color:white;
     }
 
+    &__icon {
+        padding-right: 10px;
+    }
+
+    .fa-handshake-angle {
+        font-size: 12px;
+    }
+
     /*Style footer sur tablette et desktop*/
 
     @media screen and (min-width: 768px) {

@@ -474,6 +474,12 @@ li {
 .footer__link {
   color: white;
 }
+.footer__icon {
+  padding-right: 10px;
+}
+.footer .fa-handshake-angle {
+  font-size: 12px;
+}
 @media screen and (min-width: 768px) {
   .footer {
     flex-direction: row;
