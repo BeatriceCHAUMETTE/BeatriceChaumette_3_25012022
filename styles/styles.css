@@ -63,9 +63,9 @@ li {
   right: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 1s ease-out;
+  transition: opacity 500ms ease-out;
 }
-.fa-heart:hover::after {
+.fa-heart:active::after {
   font-weight: 900;
   opacity: 1;
   background: linear-gradient(170deg, #ff79da, #9356dc);
@@ -386,19 +386,19 @@ li {
   line-height: 1.7em;
   cursor: pointer;
 }
-.menu__dish:hover .menu__dish-price {
+.menu__dish:active .menu__dish-price {
   transform: translateX(-80px);
 }
-.menu__dish:hover .menu__dish-checkbox {
+.menu__dish:active .menu__dish-checkbox {
   transform: translateX(-100%);
 }
-.menu__dish:hover .menu__dish-check {
+.menu__dish:active .menu__dish-check {
   transform: rotate(360deg);
 }
-.menu__dish:hover .menu__dish-title {
+.menu__dish:active .menu__dish-title {
   width: 70%;
 }
-.menu__dish:hover .menu__dish-composition {
+.menu__dish:active .menu__dish-composition {
   width: 50%;
 }
 .menu__dish-title {
@@ -486,4 +486,4 @@ li {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styles.css.map */

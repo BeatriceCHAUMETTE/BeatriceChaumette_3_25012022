@@ -96,7 +96,7 @@ li {
         transition: opacity 1s ease-out;   
     }
 
-    &:active::after { 
+    &:hover::after { 
         font-weight: 900;
         opacity: 1; 
         background: $background-gradient;  
@@ -456,23 +456,23 @@ li {
         line-height: 1.7em;
         cursor: pointer;
 
-        &:active .menu__dish-price {
+        &:hover .menu__dish-price {
             transform: translateX(-80px); 
         }
 
-        &:active .menu__dish-checkbox {
+        &:hover .menu__dish-checkbox {
             transform: translateX(-100%);
         }
 
-        &:active .menu__dish-check {
+        &:hover .menu__dish-check {
             transform: rotate(360deg);
         }  
 
-        &:active .menu__dish-title {
+        &:hover .menu__dish-title {
             width: 70%;
         }
 
-        &:active .menu__dish-composition {
+        &:hover .menu__dish-composition {
             width: 50%;
         }
         
