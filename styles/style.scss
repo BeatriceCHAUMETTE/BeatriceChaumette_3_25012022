@@ -20,6 +20,7 @@ $transition-dish: width 500ms ease-in-out;
 }
 
 @mixin overflow {
+    width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;   
@@ -85,7 +86,7 @@ li {
     position: relative; 
     cursor: pointer;
         
-    &::after{
+    &::after {
         content: "\f004";
         position: absolute;
         top: 0;
@@ -215,7 +216,7 @@ li {
     width: 100%;
     padding: 20px 0;
 
-    &__input{
+    &__input {
         background-color: rgba(128, 128, 128, 0);
         border: none;
         text-align: center;
@@ -309,7 +310,7 @@ li {
         gap: 20px;
     }
 
-    &__link{
+    &__link {
         flex: 1 1 45%;
     }
             
@@ -468,19 +469,23 @@ li {
             transform: rotate(360deg);
         }  
 
-        &:hover .menu__dish-title {
+        &:hover .menu__dish-title {   
             width: 70%;
         }
 
         &:hover .menu__dish-composition {
             width: 50%;
+
+            @media screen and (min-width: 1440px) {
+                width: 70%;
+            }
         }
         
     } 
     
     &__dish-title {
         @include overflow;
-        transition: $transition-dish; 
+        transition: $transition-dish;
     }
 
     &__dish-caption {
@@ -492,7 +497,8 @@ li {
     &__dish-composition {
         font-size: 16px;
         @include overflow;
-        transition: $transition-dish; 
+        transition: $transition-dish;
+
     }
 
     &__dish-price {
